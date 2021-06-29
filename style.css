@@ -1,0 +1,26 @@
+body {
+    max-width: 1080px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1rem;
+    background-color: #aaccc1;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
+}
+
+header {
+    padding: 1rem;
+    font-size: 2rem;
+}
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.pic {
+    display: grid;
+    grid-template-columns: repeat(3, 210px);
+    gap: 10px;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
