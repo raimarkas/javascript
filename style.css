@@ -56,29 +56,28 @@ header {
     max-height: 80%;
 }
 
-#left, #right {
+#left,
+#right {
     background: url(https://cdn.iconscout.com/icon/free/png-256/next-arrow-2340944-1956282.png) center center / 100% 100%;
     cursor: pointer;
     position: absolute;
-    display:block;
+    display: block;
     top: 50%;
     width:50px;
     height: 50px;
-    z-index: 1;
+    z-index: 2;
     border: none;
-    /* transition: all .2s ease; */
-    /* background-color: rgba(0, 0, 0, 0.205); */
+    overflow: auto;
 } 
 
-#left{
-    left: 10%;
+#left {
+    left: 0;
     -webkit-transform: rotate(180deg);
 }
 #right {
-    right: 10%;
+    right: 0;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 #left:hover,
 #right:hover {
   background-color: rgba(0, 0, 0, 0.137);

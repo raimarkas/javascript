@@ -70,21 +70,17 @@ lightbox.addEventListener('click', e =>{
 //left and right display function
 const leftbtn = document.getElementById('left');
 const rightbtn = document.getElementById('right');
-i = 0;
+
 
 leftbtn.addEventListener('click', e => {
-  if (i <= 0) {i = lightboximages.length; i--}
-  return currentImage
+  if (i <= 0) {i = i-1 ; i--}
+  image.src[i]
 });
-console.log(leftbtn)
+console.log(i)
 
 rightbtn.addEventListener('click', e => {
-  if (i >= lightboximages.length) {i = -1; i++}
-  return currentImage
+  if (i >= lightboximages.length) {i = i+1; i++}
+  image.src[i]
 });
-console.log(rightbtn)
+console.log(i)
 
-function currentImage(){
-  return lightboximages.setAttribute('src', 'images/' + boximg[i])
-}
-console.log(currentImage)
