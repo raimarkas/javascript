@@ -37,24 +37,24 @@ const images = [
     alt: "whale tale above water surface",
   },
 ]
-let imagesIndex = 1
 
 /// grid of pictures
 let block = document.getElementById('content');
 images.forEach( img => {
-  const newImg = document.createElement("img");
+  const newImg = document.createElement('img');
   newImg.src = img.src;
   newImg.alt = img.alt;
   block.appendChild(newImg);
 })
 
+// lightbox activation
 const lightboximages = document.querySelectorAll('img')
 lightboximages.forEach( image => {
     image.addEventListener ('click', e => {
         lightbox.classList.add('active')
         const boximg = document.createElement('img')
         boximg.src = image.src
-        boximg.id = "boximg"
+        boximg.id = 'boximg'
         while (lightbox.firstChild){
             lightbox.removeChild(lightbox.firstChild)
         }
@@ -67,22 +67,24 @@ lightbox.addEventListener('click', e =>{
     lightbox.classList.remove('active')
 })
 
-// let slideIndex = 1;
-// showSlides(slideIndex);
+//left and right display function
+const leftbtn = document.getElementById('left');
+const rightbtn = document.getElementById('right');
+i = 0;
 
-// function plusSlides(n) {
-//   showSlides(slideIndex += n);
-// }
+leftbtn.addEventListener('click', e => {
+  if (i <= 0) {i = lightboximages.length; i--}
+  return currentImage
+});
+console.log(leftbtn)
 
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
+rightbtn.addEventListener('click', e => {
+  if (i >= lightboximages.length) {i = -1; i++}
+  return currentImage
+});
+console.log(rightbtn)
 
-// function showSlides(n) {
-//   let i;
-//   let slides = lightboximages
-//   if (n > slides.length) {slideIndex = 1}
-//   if (n < 1) {slideIndex = slides.length}
-//   for (i = 0; i < slides.length; i++) {
-//       slides[i].style.display = "none";
-//   }
+function currentImage(){
+  return lightboximages.setAttribute('src', 'images/' + boximg[i])
+}
+console.log(currentImage)
