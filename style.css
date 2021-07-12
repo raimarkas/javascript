@@ -2,7 +2,7 @@ body {
     margin: 0 auto;
     text-align: center;
     font-size: 1rem;
-    background-color: #aaccc1;
+    background-color: rgb(122, 192, 186);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 400;
 }
@@ -41,7 +41,6 @@ header {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgba(0,0,0,0.8);
   }
 
@@ -56,8 +55,8 @@ header {
     max-height: 80%;
 }
 
-#left,
-#right {
+#leftbtn,
+#rightbtn {
     background: url(https://cdn.iconscout.com/icon/free/png-256/next-arrow-2340944-1956282.png) center center / 100% 100%;
     cursor: pointer;
     position: absolute;
@@ -65,20 +64,20 @@ header {
     top: 50%;
     width:50px;
     height: 50px;
-    z-index: 2;
+    z-index: 5;
     border: none;
-    overflow: auto;
 } 
 
-#left {
-    left: 0;
-    -webkit-transform: rotate(180deg);
+.left {
+    display: block;
+    left: 10%;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
 }
-#right {
-    right: 0;
+.right {
+    right: 10%;
 }
 
-#left:hover,
-#right:hover {
+.left:hover,
+.right:hover {
   background-color: rgba(0, 0, 0, 0.137);
 }

@@ -38,6 +38,8 @@ const images = [
   },
 ]
 
+let i = 0
+
 /// grid of pictures
 let block = document.getElementById('content');
 images.forEach( img => {
@@ -51,7 +53,10 @@ images.forEach( img => {
 const lightboximages = document.querySelectorAll('img')
 lightboximages.forEach( image => {
     image.addEventListener ('click', e => {
-        lightbox.classList.add('active')
+        lightbox.classList.add('active');
+        i = images.findIndex((element) => element.src == image.src);
+        // console.log(images.findIndex((element) => element.src == image.src));
+        console.log(i)
         const boximg = document.createElement('img')
         boximg.src = image.src
         boximg.id = 'boximg'
@@ -68,19 +73,37 @@ lightbox.addEventListener('click', e =>{
 })
 
 //left and right display function
-const leftbtn = document.getElementById('left');
-const rightbtn = document.getElementById('right');
-
+const leftbtn = document.querySelector('.left');
+leftbtn.id = 'leftbtn'
+const rightbtn = document.querySelector('.right');
+rightbtn.id = 'rightbtn'
 
 leftbtn.addEventListener('click', e => {
-  if (i <= 0) {i = i-1 ; i--}
-  image.src[i]
+  i = i - 1
+  const image = lightboximages[i]
+  
+  const boximg = document.createElement('img')
+        boximg.src = image.src
+        boximg.id = 'boximg'
+    while (lightbox.firstChild){
+            lightbox.removeChild(lightbox.firstChild)
+        }
+  lightbox.appendChild(boximg)
+  // console.log(lightboximages[i])
 });
-console.log(i)
+
 
 rightbtn.addEventListener('click', e => {
-  if (i >= lightboximages.length) {i = i+1; i++}
-  image.src[i]
+  // i = i + 1
+  const image = lightboximages[i]
+  for (let i = 0; i < image.length ; i++)
+  console.log(image[i])
+  const boximg = document.createElement('img')
+        boximg.src = image.src
+        boximg.id = 'boximg'
+        while (lightbox.firstChild){
+          lightbox.removeChild(lightbox.firstChild)
+      }
+        lightbox.appendChild(boximg)
+  // console.log(lightboximages[i])
 });
-console.log(i)
-
