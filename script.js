@@ -54,6 +54,8 @@ const lightboximages = document.querySelectorAll('img')
 lightboximages.forEach( image => {
     image.addEventListener ('click', e => {
         lightbox.classList.add('active');
+        left.classList.add('active');
+        right.classList.add('active');
         i = images.findIndex((element) => element.src == image.src);
         // console.log(images.findIndex((element) => element.src == image.src));
         console.log(i)
@@ -70,18 +72,18 @@ lightboximages.forEach( image => {
 lightbox.addEventListener('click', e =>{
     if (e.target !== e.currentTarget) return
     lightbox.classList.remove('active')
+    left.classList.remove('active')
+    right.classList.remove('active')
 })
 
 //left and right display function
-const leftbtn = document.querySelector('.left');
-leftbtn.id = 'leftbtn'
-const rightbtn = document.querySelector('.right');
-rightbtn.id = 'rightbtn'
+const leftbtn = document.getElementById('left');
+const rightbtn = document.getElementById('right');
 
 leftbtn.addEventListener('click', e => {
   i = i - 1
+  if( i <= 0) i = lightboximages.length - 1
   const image = lightboximages[i]
-  
   const boximg = document.createElement('img')
         boximg.src = image.src
         boximg.id = 'boximg'
@@ -94,10 +96,9 @@ leftbtn.addEventListener('click', e => {
 
 
 rightbtn.addEventListener('click', e => {
-  // i = i + 1
+  i = i + 1
+  if ( i >=lightboximages.length) i = 0
   const image = lightboximages[i]
-  for (let i = 0; i < image.length ; i++)
-  console.log(image[i])
   const boximg = document.createElement('img')
         boximg.src = image.src
         boximg.id = 'boximg'

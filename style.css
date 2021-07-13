@@ -55,29 +55,32 @@ header {
     max-height: 80%;
 }
 
-#leftbtn,
-#rightbtn {
-    background: url(https://cdn.iconscout.com/icon/free/png-256/next-arrow-2340944-1956282.png) center center / 100% 100%;
-    cursor: pointer;
-    position: absolute;
-    display: block;
+#left {
+    display: none;
     top: 50%;
-    width:50px;
-    height: 50px;
-    z-index: 5;
-    border: none;
-} 
-
-.left {
-    display: block;
     left: 10%;
     transform: matrix(-1, 0, 0, 1, 0, 0);
 }
-.right {
+
+#right {
+    display: none;
+    top: 50%;
     right: 10%;
 }
 
-.left:hover,
-.right:hover {
+#left.active,
+#right.active {
+    background: url(https://cdn.iconscout.com/icon/free/png-256/next-arrow-2340944-1956282.png) center center / 100% 100%;
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    width:50px;
+    height: 50px;
+    z-index: 1;
+    border: none;
+} 
+
+#left.active:hover,
+#right.active:hover {
   background-color: rgba(0, 0, 0, 0.137);
 }
