@@ -36,6 +36,7 @@ const images = [
     src: "https://images.unsplash.com/photo-1564295644023-16f14ac50b93",
     alt: "whale tale above water surface",
   },
+  
 ]
 
 let i = 0
@@ -82,7 +83,7 @@ const rightbtn = document.getElementById('right');
 
 leftbtn.addEventListener('click', e => {
   i = i - 1
-  if( i <= 0) i = lightboximages.length - 1
+  if( i < 0) i = lightboximages.length - 1
   const image = lightboximages[i]
   const boximg = document.createElement('img')
         boximg.src = image.src
@@ -97,7 +98,7 @@ leftbtn.addEventListener('click', e => {
 
 rightbtn.addEventListener('click', e => {
   i = i + 1
-  if ( i >=lightboximages.length) i = 0
+  if ( i === lightboximages.length) i = 0
   const image = lightboximages[i]
   const boximg = document.createElement('img')
         boximg.src = image.src
@@ -108,3 +109,4 @@ rightbtn.addEventListener('click', e => {
         lightbox.appendChild(boximg)
   // console.log(lightboximages[i])
 });
+//*[@id="boximg"]

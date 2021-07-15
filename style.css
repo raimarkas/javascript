@@ -57,14 +57,12 @@ header {
 
 #left {
     display: none;
-    top: 50%;
     left: 10%;
     transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
 #right {
     display: none;
-    top: 50%;
     right: 10%;
 }
 
@@ -74,13 +72,16 @@ header {
     cursor: pointer;
     position: absolute;
     display: flex;
-    width:50px;
-    height: 50px;
-    z-index: 1;
+    width: 100px;
+    height: 100px;
+    z-index: 2;
     border: none;
+    background-color: rgba(109, 106, 106, 0.137);
+    top: 50%;
+    transform: transitionY(-50%);
 } 
 
 #left.active:hover,
 #right.active:hover {
-  background-color: rgba(0, 0, 0, 0.137);
+  background-color: rgba(0, 0, 0, 0.342);
 }
